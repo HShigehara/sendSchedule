@@ -1,4 +1,8 @@
 var lineToken = "2AfUxK2jxG1oHC7exp76n4WVYO7IT0byCLYpIW4doKU";
+var emiCalName = "しみずえみこ";
+var emiAddress = "rahmens.js5@gmail.com";
+var shigeCalName = "H.Shigehara";
+var shigeAddress = "Chilly_Private";
 
 function main() {
   var calendars = CalendarApp.getAllCalendars();
@@ -10,7 +14,15 @@ function main() {
 
     if( events.length > 0 ) {
       text += "==================\n";
-      text += "◆" + calendar.getName() + "\n";
+      if( calendar.getName() == emiAddress ){
+        text += "◆" + emiCalName + "\n";
+      }
+      else if( calendar.getName() == shigeAddress ){
+        text += "◆" + shigeCalName + "\n";
+      }
+      else{
+        text += "◆" + "その他" + "\n";
+      }
     }
 
     for(j in events) {
